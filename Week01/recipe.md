@@ -6,7 +6,7 @@
 
 I've had mochi many times in restaurants and have always been fascinated by its unique combination of taste and texture; but I had absolutely no clue how it was done. I basically still don't, but regardless, this was my first attempt and I look forward to lots of criticism.
 
-By John Mitzewich ([original source](https://www.allrecipes.com/recipe/238918/green-tea-mochi-ice-cream/))
+*By John Mitzewich* ([original source](https://www.allrecipes.com/recipe/238918/green-tea-mochi-ice-cream/))
 
 ## Ingredients
 - 10 small scoops **ice cream**
