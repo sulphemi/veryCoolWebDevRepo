@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>aaaaaaaa</title>
+    <style>
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 200px;
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .sub-dropdown {
+            position: relative;
+        }
+
+        .sub-dropdown .specifics {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 100%;
+            background-color: #f9f9f9;
+            min-width: 200px;
+            z-index: 1;
+        }
+
+        .sub-dropdown:hover .specifics {
+            display: block;
+        }
+
+        .dropdown span {
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Recipe organization for <a href="https://www.budgetbytes.com/">BudgetBytes</a></h1>
+    <p>(hover)</p>
+    <div class="dropdown">
+        <span>Under $10</span>
+        <div class="dropdown-content">
+            <div class="specifics">
+                <a>Candied Pecans</a>
+                <a>Black-Eyed Peas</a>
+                <a>Chocolate Fudge</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="dropdown">
+        <span>Chicken</span>
+        <div class="dropdown-content">
+            <div class="sub-dropdown">
+                <span>Chicken Breast</span>
+                <div class="specifics">
+                    <a>Chicken Noodle Soup</a>
+                    <a>Creamy Pesto Chicken</a>
+                    <a>Sheet Pan Chicken Fajitas</a>
+                    <a>BBQ Cheddar Baked Chicken</a>
+                </div>
+            </div>
+            <div class="sub-dropdown">
+                <span>Chicken Thigh</span>
+                <div class="specifics">
+                    <a>Chipotle Chicken Tacos</a>
+                    <a>Chicken and Dumplings</a>
+                </div>
+            </div>
+            <div class="sub-dropdown">
+                <span>Chicken Wing</span>
+                <div class="specifics">
+                    <a>Baked Chicken Wings</a>
+                    <a>Air Fryer Chicken Wings</a>
+                </div>
+            </div>
+            <div class="sub-dropdown">
+                <span>Salad</span>
+                <div class="specifics">
+                    <a>Curry Chicken Salad</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="dropdown">
+        <span>Vegitarian</span>
+        <div class="dropdown-content">
+            <div class="sub-dropdown">
+                <span>Tofu</span>
+                <div class="specifics">
+                    <a>Southwest Tofu Scramble</a>
+                    <a>Soy Marinated Tofu</a>
+                    <a>Curried Tofu Salad</a>
+                    <a>Honey Sriracha Tofu</a>
+                </div>
+            </div>
+            <div class="sub-dropdown">
+                <span>Vegan</span>
+                <div class="specifics">
+                    <a>Peanut Stew</a>
+                    <a>Cabbage Soup</a>
+                </div>
+            </div>
+            <div class="sub-dropdown">
+                <span>Vegitarian Soup</span>
+                <div class="specifics">
+                    <a>Tomato Soup</a>
+                    <a>Sopa de Letras</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="dropdown">
+        <span>Dessert</span>
+        <div class="dropdown-content">
+            <div class="specifics">
+                <a>Fudgy Homemade Brownies</a>
+                <a>Jello Salad</a>
+                <a>Lemon Cream Pie</a>
+                <a>Raspberry Oatmeal Bars</a>
+                <a>Homemade Rice Crispies</a>
+                <a>Oatmeal Cookies</a>
+                <a>Candied Pecans</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
