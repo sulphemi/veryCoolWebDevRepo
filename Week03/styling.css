@@ -1,0 +1,43 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap'); */
+
+body {
+    font-family: 'EB Garamond', Georgia, Times, 'Times New Roman', serif;
+}
+
+figure {
+    margin: auto;
+    margin-top: 20px;
+    width: 75%;
+    display: flex;
+}
+
+figcaption {
+    display: inline-block;
+    text-align: center;
+    width: 70%;
+}
+
+.quote {
+    display: block;
+    margin: 20px;
+    display: block;
+}
+
+.logo {
+    font-family: 'Dancing Script', cursive;
+    font-size: 40px;
+}
+
+#signature {
+    font-family: 'Dancing Script', cursive;
+}
+
+.center-vertical {
+    display: flex;
+    align-items: center;
+}
+
+#product_image {
+    border-radius: 30px;
+    width: 30%;
+}
