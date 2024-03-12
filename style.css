@@ -29,7 +29,7 @@ div.annotated {
     overflow: hidden;
 }
 
-div.annotated:hover p span.annotated-highlight {
+div.annotated:hover p span.annot-highlight {
     background-color: rgba(120, 120, 120, 0.5);
 }
 
