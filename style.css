@@ -9,12 +9,12 @@ header {
 main {
     display: flex;
     flex-direction: column;
-    margin-left: 10%;
-    width: fit-content;
+    margin-left: 100px;
+    padding: 10px;
+    width: 500px;
 }
 
 p {
-    display: block;
     margin: 0;
     padding: 0;
     margin-bottom: 0.25rem;
@@ -22,6 +22,10 @@ p {
 
 div.stanza {
     margin-bottom: 1rem;
+}
+
+div.stanza p {
+    overflow-wrap: break-word;
 }
 
 div.annotated {
@@ -42,7 +46,7 @@ div.annot-passage {
 .annot-note {
     position: absolute;
     top: inherit;
-    left: 40%;
+    left: 600px;
     width: 0;
     height: fit-content;
     opacity: 0;
@@ -64,4 +68,10 @@ div.annotated:hover .annot-note {
     opacity: 100%;
     width: 300px;
     /* background-color: rgba(120, 120, 120, 0.5); */
+}
+
+@media screen and (max-width: 900px) {
+    body {
+        background-color: rgb(250, 150, 150);
+    }
 }
