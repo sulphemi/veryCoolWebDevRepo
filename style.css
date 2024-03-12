@@ -13,10 +13,14 @@ main {
 }
 
 p {
-    display: inline;
+    display: block;
     margin: 0;
     padding: 0;
     margin-bottom: 0.25rem;
+}
+
+div.stanza {
+    margin-bottom: 1rem;
 }
 
 div.annotated {
