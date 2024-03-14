@@ -1,5 +1,6 @@
 header {
     margin-left: 100px;
+    padding-top: 20px;
 }
 
 main {
@@ -31,7 +32,7 @@ div.annotated {
 }
 
 div.annotated:hover p span.annot-highlight {
-    background-color: rgba(120, 120, 120, 0.5);
+    background-color: rgba(120, 120, 120, 0.3);
 }
 
 div.annot-passage {
