@@ -18,7 +18,7 @@
 
                 this.xpos = 0;
                 this.ypos = 0;
-                this.min_v = randF(0.05, 0.5);
+                this.min_v = randF(0.1, 0.75);
                 this.yvel = randF(0.5, 2);
                 this.accel = 0;
                 this.friction = randF(1.05, 1.1);
@@ -49,7 +49,7 @@
 
                 // apply velocity
                 if ((this.ypos -= this.yvel) < 0) {
-                    this.ypos = window.innerWidth;
+                    this.ypos = window.innerHeight;
                 }
 
                 // apply position
