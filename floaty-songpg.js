@@ -13,7 +13,6 @@ class floatingLetter {
         this.ypos = 0;
         this.min_v = randF(0.1, 0.75);
         this.yvel = randF(0.5, 2);
-        this.accel = 0;
         this.friction = randF(1.05, 1.1);
         this.influence = randF(0.02, 0.05);
 
@@ -29,7 +28,7 @@ class floatingLetter {
 
         // opacity scales based on distance from passage
         let opacity;
-        if (this.xpos > 800) {
+        if (this.xpos > 900) {
             opacity = randF(0.5, 1.0);
         } else if (this.xpos > 600) {
             opacity = randF(0.2, 0.4);
@@ -43,16 +42,7 @@ class floatingLetter {
     }
 
     tick() {
-        // // apply friction
-        // if ((this.accel -= this.friction) < 0) {
-        //     this.accel = 0;
-        // }
-
-        // // apply acceleration
-        // if ((this.yvel -= this.accel + this.friction) < this.min_v) {
-        //     this.yvel = this.min_v;
-        // }
-        
+        // apply force
         if ((this.yvel /= this.friction) < this.min_v) {
             this.yvel = this.min_v;
         }
@@ -69,7 +59,7 @@ class floatingLetter {
 
     gotoRandom() {
         // goes to a random position on webpage,
-        // used for symbols that appear when first loading webpage\
+        // used for symbols that appear when first loading webpage
         this.xpos = randInt(0, window.innerWidth);
         this.ypos = randInt(0, window.innerHeight);
     }
@@ -80,9 +70,7 @@ class floatingLetter {
 }
 
 function updateAll() {
-    for (const x of bg_elems) {
-        x.tick();
-    }
+    for (const x of bg_elems) x.tick();
     requestAnimationFrame(updateAll);
 }
 
