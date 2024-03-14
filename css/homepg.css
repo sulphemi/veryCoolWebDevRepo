@@ -75,4 +75,10 @@
             .container {
                 flex-direction: column;
             }
+
+            .container .song-link {
+                flex: none;
+                width: auto;
+                margin: 25px;
+            }
         }
