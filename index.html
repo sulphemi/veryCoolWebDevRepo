@@ -8,7 +8,8 @@
         const bg_elems = [];
         let bg_div;
 
-        function randInt(lower, upper) { return Math.floor(Math.random() * (upper - lower) + lower); }
+        function randF(lower, upper) { return Math.random() * (upper - lower) + lower; }
+        function randInt(lower, upper) { return Math.floor(randF(upper, lower)); }
 
         class floatingLetter {
             constructor() {
@@ -17,6 +18,10 @@
 
                 this.xpos = 0;
                 this.ypos = 0;
+                this.min_v = randF(0.05, 1);
+                this.yvel = randF(0.5, 2);
+                this.accel = 0;
+                this.friction = randF(0.02, 0.05);
             }
 
             initDOMElement() {
@@ -27,9 +32,17 @@
             }
 
             tick() {
-                if (this.ypos-- < 0) {
+                // apply acceleration
+                if ((this.yvel -= this.friction) < this.min_v) {
+                    this.yvel = this.min_v;
+                }
+                
+                // apply velocity
+                if ((this.ypos -= this.yvel) < 0) {
                     this.ypos = window.innerWidth;
                 }
+
+                // apply position
                 this.DOM_elem.style.top = this.ypos;
                 this.DOM_elem.style.left = this.xpos;
             }
