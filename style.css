@@ -3,6 +3,12 @@ header {
     padding-top: 20px;
 }
 
+header h2 {
+    font-size: 1rem;
+    font-weight: normal;
+    font-style: italic;
+}
+
 main {
     display: flex;
     flex-direction: column;
