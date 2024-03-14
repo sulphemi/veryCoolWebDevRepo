@@ -29,6 +29,8 @@
                 this.DOM_elem = document.createElement("span");
                 this.DOM_elem.textContent = "a";
                 this.DOM_elem.classList.add("floater");
+                this.DOM_elem.style.opacity = randInt(10, 60) + '%';
+                this.DOM_elem.style.fontSize = randInt(10, 40);
                 bg_div.appendChild(this.DOM_elem);
             }
 
@@ -78,7 +80,8 @@
 
         function makeSymbols() {
             // add symbols to the background
-            for (let i = 0; i < 10; i++) {
+            let ct = window.innerWidth / 30; // how many to add
+            for (let i = 0; i < ct; i++) {
                 new floatingLetter().gotoRandom();
             }
             updateAll();
