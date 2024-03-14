@@ -64,7 +64,7 @@ function updateAll() {
 
 function makeSymbols() {
     // add symbols to the background
-    let ct = window.innerWidth / 30; // how many to add
+    let ct = window.innerWidth / 20; // how many to add
     for (let i = 0; i < ct; i++) {
         new floatingLetter();
     }

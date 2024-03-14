@@ -29,7 +29,7 @@ class floatingLetter {
         // opacity scales based on distance from passage
         let opacity;
         if (this.xpos > 900) {
-            opacity = randF(0.5, 1.0);
+            opacity = randF(0.3, 0.9);
         } else if (this.xpos > 600) {
             opacity = randF(0.2, 0.4);
         } else {
@@ -76,7 +76,7 @@ function updateAll() {
 
 function makeSymbols() {
     // add symbols to the background
-    let ct = window.innerWidth / 30; // how many to add
+    let ct = window.innerWidth / 20; // how many to add
     for (let i = 0; i < ct; i++) {
         new floatingLetter();
     }
