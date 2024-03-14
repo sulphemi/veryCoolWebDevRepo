@@ -80,6 +80,38 @@ div.annotated:hover .annot-note {
 
 @media screen and (max-width: 900px) {
     body {
-        background-color: rgb(250, 150, 150);
+        /* background-color: rgb(250, 150, 150); */
+    }
+
+    div.annotated {
+        flex-direction: column;
+    }
+
+    div.annotated p span.annot-highlight {
+        background-color: rgba(120, 120, 120, 0.3);
+    }
+
+    div.annotated:hover p span.annot-highlight {
+        background-color: rgba(120, 120, 120, 0.5);
+    }
+
+    .annot-note {
+        position: relative;
+        left: inherit;
+        height: 0;
+        border: none;
+        border-left: solid 1px black;
+    }
+
+    .annot-note p {
+        display: block;
+        width: 500px;
+    }
+
+    div.annotated:hover .annot-note {
+        opacity: 100%;
+        width: 500px;
+        height: fit-content;
+        /* background-color: rgba(120, 120, 120, 0.5); */
     }
 }
