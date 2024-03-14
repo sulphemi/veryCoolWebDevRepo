@@ -10,11 +10,11 @@
 
         function randF(lower, upper) { return Math.random() * (upper - lower) + lower; }
         function randInt(lower, upper) { return Math.floor(randF(upper, lower)); }
+        function randC() { return "QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm"[randInt(0, 52)]; }
 
         class floatingLetter {
             constructor() {
                 bg_elems.push(this);
-                this.initDOMElement();
 
                 this.xpos = 0;
                 this.ypos = 0;
@@ -23,14 +23,29 @@
                 this.accel = 0;
                 this.friction = randF(1.05, 1.1);
                 this.influence = randF(0.02, 0.05);
+
+                this.gotoRandom();
+                this.initDOMElement();
             }
 
             initDOMElement() {
                 this.DOM_elem = document.createElement("span");
-                this.DOM_elem.textContent = "a";
+                this.DOM_elem.textContent = randC();
                 this.DOM_elem.classList.add("floater");
-                this.DOM_elem.style.opacity = randInt(10, 60) + '%';
-                this.DOM_elem.style.fontSize = randInt(10, 40);
+                this.DOM_elem.style.fontSize = randInt(15, 40);
+
+                // opacity scales based on distance from passage
+                let opacity;
+                if (this.xpos > 800) {
+                    opacity = randF(0.5, 1.0);
+                } else if (this.xpos > 600) {
+                    opacity = randF(0.2, 0.4);
+                } else {
+                    opacity = randF(0.1, 0.2);
+                }
+                this.DOM_elem.style.opacity = opacity;
+                // 350px from left marks center of <main>
+                // this.DOM_elem.style.opacity = (1 - Math.abs(this.x - 350) / window.innerWidth) * 100 + '%';
                 bg_div.appendChild(this.DOM_elem);
             }
 
@@ -50,7 +65,7 @@
                 }
 
                 // apply velocity
-                if ((this.ypos -= this.yvel) < 0) {
+                if ((this.ypos -= this.yvel) < -60) {
                     this.ypos = window.innerHeight;
                 }
 
@@ -82,7 +97,7 @@
             // add symbols to the background
             let ct = window.innerWidth / 30; // how many to add
             for (let i = 0; i < ct; i++) {
-                new floatingLetter().gotoRandom();
+                new floatingLetter();
             }
             updateAll();
         }
