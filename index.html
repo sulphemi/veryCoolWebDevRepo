@@ -18,10 +18,11 @@
 
                 this.xpos = 0;
                 this.ypos = 0;
-                this.min_v = randF(0.05, 1);
+                this.min_v = randF(0.05, 0.5);
                 this.yvel = randF(0.5, 2);
                 this.accel = 0;
-                this.friction = randF(0.02, 0.05);
+                this.friction = randF(1.05, 1.1);
+                this.influence = randF(0.02, 0.05);
             }
 
             initDOMElement() {
@@ -32,11 +33,20 @@
             }
 
             tick() {
-                // apply acceleration
-                if ((this.yvel -= this.friction) < this.min_v) {
+                // // apply friction
+                // if ((this.accel -= this.friction) < 0) {
+                //     this.accel = 0;
+                // }
+
+                // // apply acceleration
+                // if ((this.yvel -= this.accel + this.friction) < this.min_v) {
+                //     this.yvel = this.min_v;
+                // }
+                
+                if ((this.yvel /= this.friction) < this.min_v) {
                     this.yvel = this.min_v;
                 }
-                
+
                 // apply velocity
                 if ((this.ypos -= this.yvel) < 0) {
                     this.ypos = window.innerWidth;
@@ -73,10 +83,17 @@
             }
             updateAll();
         }
+
+        function mouseScroll(event) {
+            for (const x of bg_elems) {
+                x.yvel += event.deltaY * x.influence;
+            }
+        }
         
         document.addEventListener("DOMContentLoaded", () => {
             bg_div = document.getElementById("background");
             makeSymbols();
+            document.addEventListener("wheel", mouseScroll);
         });
     </script>
 </head>
