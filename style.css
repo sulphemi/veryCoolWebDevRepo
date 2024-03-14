@@ -115,3 +115,9 @@ div.annotated:hover .annot-note {
         /* background-color: rgba(120, 120, 120, 0.5); */
     }
 }
+
+@media screen and (max-width: 768px) {
+    header, main {
+        margin-left: 5px;
+    }
+}
