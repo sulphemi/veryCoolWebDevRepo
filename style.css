@@ -5,6 +5,11 @@
     padding: 0;
 }
 
+::selection {
+    background: rgb(29, 29, 29);
+    color: white;
+}
+
 header {
     margin-left: 100px;
 }
@@ -79,6 +84,8 @@ div.annotated:hover .annot-note {
     position: fixed;
     width: 100%;
     height: 100%;
+    background: radial-gradient(#e8e8e8, #636363);
+    mix-blend-mode: multiply;
 }
 
 .floater {
