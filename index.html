@@ -4,11 +4,79 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./style.css">
+    <script>
+        const bg_elems = [];
+        let bg_div;
+
+        function randInt(lower, upper) { return Math.floor(Math.random() * (upper - lower) + lower); }
+
+        class floatingLetter {
+            constructor() {
+                bg_elems.push(this);
+                this.initDOMElement();
+
+                this.xpos = 0;
+                this.ypos = 0;
+            }
+
+            initDOMElement() {
+                this.DOM_elem = document.createElement("span");
+                this.DOM_elem.textContent = "a";
+                this.DOM_elem.classList.add("floater");
+                bg_div.appendChild(this.DOM_elem);
+            }
+
+            tick() {
+                if (this.ypos-- < 0) {
+                    this.ypos = window.innerWidth;
+                }
+                this.DOM_elem.style.top = this.ypos;
+                this.DOM_elem.style.left = this.xpos;
+            }
+
+            gotoRandom() {
+                // goes to a random position on webpage,
+                // used for symbols that appear when first loading webpage\
+                this.xpos = randInt(0, window.innerWidth);
+                this.ypos = randInt(0, window.innerHeight);
+            }
+
+            selfDestruct() {
+                bg_elems.splice(bg_elems.indexOf(this), 1); // hurr hurr linear runtime bad -- dsa nerd, probably
+            }
+        }
+
+        function updateAll() {
+            for (const x of bg_elems) {
+                x.tick();
+            }
+            requestAnimationFrame(updateAll);
+        }
+
+        function makeSymbols() {
+            // add symbols to the background
+            for (let i = 0; i < 10; i++) {
+                new floatingLetter().gotoRandom();
+            }
+            updateAll();
+        }
+        
+        document.addEventListener("DOMContentLoaded", () => {
+            bg_div = document.getElementById("background");
+            makeSymbols();
+        });
+    </script>
 </head>
 <body>
+    <div id="background">
+        <!-- this element will be populated by js -->
+    </div>
+
     <header>
         <h1>Inochi ni Kirawareteiru</h1>
+        <p>this is the subheading</p>
     </header>
+
     <main>
         <div class="stanza">
             <p>"Don't you wish for death when you're feeling weak!"</p>
