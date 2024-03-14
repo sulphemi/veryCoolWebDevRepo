@@ -10,3 +10,17 @@
     background: #1d1d1d;
     color: white;
 }
+
+#background {
+    pointer-events: none;
+    /* background-color: rgba(253, 172, 214, 0.33); */
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(#e8e8e8, #636363);
+    mix-blend-mode: multiply;
+}
+
+.floater {
+    position: fixed;
+}
