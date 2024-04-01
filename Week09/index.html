@@ -1,0 +1,115 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cool amazing javascript!!!</title>
+    <script>
+        let shyButton;
+        let x, y;
+        let xvel = 0;
+        let yvel = 0;
+        let buttonwidth;
+        let buttonheight;
+
+
+        function randF(lower, upper) { return Math.random() * (upper - lower) + lower; }
+
+        function gotoCenter() {
+            x = window.innerWidth / 2;
+            y = window.innerHeight / 2;
+        }
+
+        function offEdge() {
+            if (x < 0) {
+                x = window.innerWidth;
+            }
+            if (x > window.innerWidth) {
+                x = 0;
+            }
+            if (y < 0) {
+                y = window.innerHeight;
+            }
+            if (y > window.innerHeight) {
+                y = 0;
+            }
+        }
+
+        function updatePos() {
+            shyButton.style.left = x - buttonwidth / 2;
+            shyButton.style.top = y - buttonheight / 2;
+        }
+
+        function tick() {
+            x += xvel;
+            y += yvel;
+            xvel /= 1.2;
+            yvel /= 1.2;
+
+            offEdge();
+            updatePos();
+            requestAnimationFrame(tick);
+        }
+
+        function runAway(event) {
+            if (event.clientX < x) {
+                xvel = randF(20, 40);
+            } else {
+                xvel = randF(-40, -20);
+            }
+
+            // console.log(`${event.clientY} ${y}`);
+            if (event.clientY < y) {
+                yvel = randF(0, 10);
+            } else {
+                yvel = randF(-10, 0);
+            }
+        }
+
+        addEventListener("DOMContentLoaded", event => {
+            shyButton = document.getElementById("shyButton");
+            shyButton.addEventListener("mouseover", event => {
+                // console.log(event);
+                runAway(event);
+            });
+
+            shyButton.addEventListener("click", () => {
+                alert("you did it!");
+            });
+
+            buttonheight = shyButton.offsetHeight;
+            buttonwidth = shyButton.offsetWidth;
+
+            gotoCenter();
+            tick();
+        });
+    </script>
+
+    <style>
+        * {
+            font-family: Helvetica, sans-serif;
+        }
+
+        h1 {
+            font-size: 24px;
+            font-weight: 400;
+            text-align: center;
+            margin-top: 100px;
+        }
+
+        #shyButton {
+            position: absolute;
+            white-space: nowrap;
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="h1-text">click the button to see cool amazing javascript in action!!!</h1>
+    <button id="shyButton">click me!!!</button>
+</body>
+</html>
