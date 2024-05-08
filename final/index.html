@@ -5,6 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
     <link rel="stylesheet" href="./style.css">
+    <style>
+        /* dropdown css */
+        dropdown {
+            display: inline-block;
+            padding: 10px;
+            background-color: rgb(102, 128, 150);
+            color: white;
+            border-radius: 10px;
+
+            max-height: 30px;
+            overflow: hidden;
+
+            transition: all 1s ease;
+        }
+
+        dropdown:hover {
+            max-height: 200px;
+        }
+
+        dropdown:hover ul {
+            opacity: 100%;
+        }
+
+        dropdown ul {
+            color:black;
+            opacity: 0%;
+            transition: opacity 1s ease;
+        }
+    </style>
 </head>
 <body>
     <nav>
@@ -19,8 +48,15 @@
     </nav>
     <div class="hero">
         <h1>Hi, I'm Jing.</h1>
-        <h2>I'm a </h2>
-        <dropdown></dropdown>
+        <h2>I'm a 
+            <dropdown>
+                something
+                <ul>
+                    <li>thing 1</li>
+                    <li>thing 2</li>
+                </ul>
+            </dropdown>
+        </h2>
     </div>
 </body>
 </html>
