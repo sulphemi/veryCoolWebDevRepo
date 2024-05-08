@@ -6,6 +6,62 @@
     <title></title>
     <link rel="stylesheet" href="./style.css">
     <style>
+        body {
+            margin: 0px;
+            box-sizing: border-box;
+        }
+    </style>
+    <style>
+        /* navbar css */
+        nav {
+    display: flex;
+    justify-content: flex-end;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000; /* idk if this is too much */
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 10px;
+    display: inline-block;
+    position: relative;
+}
+
+nav ul li a {
+    color: black;
+    display: block;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+nav ul li::before {
+    position: absolute;
+    z-index: -1;
+    content: "";
+    width: 0%;
+    height: 1.1rem;
+    background: #c0879e;
+    top: 1.3rem;
+    left: 50%;
+    transition: all 0.5s ease;
+}
+
+nav ul li:hover::before {
+    left: 0;
+    width: 100%;
+}
+
+    </style>
+    <style>
         /* dropdown css */
         dropdown {
             display: inline-block;
@@ -33,6 +89,11 @@
             opacity: 0%;
             transition: opacity 1s ease;
         }
+
+        #im {
+            display: flex;
+            align-items: flex-start;
+        }
     </style>
 </head>
 <body>
@@ -48,7 +109,8 @@
     </nav>
     <div class="hero">
         <h1>Hi, I'm Jing.</h1>
-        <h2>I'm a 
+        <div id="im">
+            <h1>I'm a</h1>
             <dropdown>
                 something
                 <ul>
@@ -56,7 +118,7 @@
                     <li>thing 2</li>
                 </ul>
             </dropdown>
-        </h2>
+        </div>
     </div>
 </body>
 </html>
