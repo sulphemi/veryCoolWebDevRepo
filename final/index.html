@@ -98,6 +98,7 @@
                 box.addEventListener("click", function() {
                     // console.log("hi");
                     currentActiveModal = document.getElementById(this.getAttribute("linked-modal"));
+                    if (! currentActiveModal) return;
 
                     // load everything in modal
                     currentActiveModal.querySelectorAll(".lazyload").forEach(function (element) {
