@@ -25,6 +25,9 @@
     margin: 10px;
     width: 200px;
     height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: white;
     box-shadow: 5px 5px rgb(206, 221, 221);
     border-radius: 10px;
@@ -35,6 +38,11 @@
     background-color: rgb(226, 241, 241);
     transform: translate(-10px, -10px);
     box-shadow: 10px 10px rgb(206, 221, 221);
+}
+
+.portfolio-box img {
+    border-radius: 10px;
+    width: 90%;
 }
 
 @media screen and (max-width: 800px) {

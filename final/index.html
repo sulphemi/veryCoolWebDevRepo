@@ -95,6 +95,14 @@
             text-decoration: none;
             cursor: pointer;
         }
+
+        .modal-caption {
+            margin: 20px;
+        }
+
+        .modal-caption * {
+            margin-top: 0;
+        }
     </style>
 
     <script>
@@ -168,7 +176,7 @@
     <div class="portfolio-content" id="cs-portfolio">
         <div class="portfolio-column">
             <div class="portfolio-box" linked-modal="project-GraphicsEngine-modal">
-                <p>click me</p>
+                <img src="./thumb/201.png">
             </div>
             <div class="portfolio-box">
                 <p>hi</p>
@@ -214,12 +222,14 @@
 
     <!-- modals -->
     <div id="project-GraphicsEngine-modal" class="modal">
-        <!-- Modal content -->
         <div class="modal-content">
             <span class="modal-close">&times;</span>
-            <!-- Lazy Loaded Image -->
-            <img lazy-src="https://via.placeholder.com/400" alt="Lazy Loaded Image" class="lazyload">
-            <h2>Graphics Engine</h2>
+            <img lazy-src="./full/graphics.gif" alt="Lazy Loaded Image" class="lazyload">
+            <div class="modal-caption">
+                <h2>Graphics Engine</h2>
+                <p>A matrix-based graphics engine written in Java.</p>
+                <p>Links: <a href="https://github.com/sulphemi/graphics-engine">Github</a></p>
+            </div>
         </div>
     </div>
 </body>
