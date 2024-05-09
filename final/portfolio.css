@@ -49,5 +49,6 @@
     /* styles go here idk lolz */
     .portfolio-content {
         flex-direction: column;
+        margin-left: 10%;
     }
 }
