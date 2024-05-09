@@ -49,28 +49,13 @@
             width: 200px;
             height: 200px;
             background-color: white;
+            box-shadow: 0.5rem 0.5rem rgb(206, 221, 221);
             border-radius: 10px;
             transition: all 0.2s ease;
         }
 
         .portfolio-box:hover {
             background-color: rgb(226, 241, 241);
-        }
-
-        /* faux drop shadow for box */
-        .portfolio-box::before {
-            content: "";
-            position: absolute;
-            width: 200px;
-            height: 200px;
-            background-color: rgb(206, 221, 221);
-            border-radius: 10px;
-            transform: translate(5px, 5px);
-            z-index: -1;
-        }
-
-        .portfolio-content:not(target) .portfolio-column .portfolio-box::before {
-            visibility: hidden;
         }
 
         @media screen and (min-width: 800) {
