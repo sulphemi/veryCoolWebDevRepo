@@ -96,6 +96,7 @@
         let currentActiveModal = null;
 
         document.addEventListener("DOMContentLoaded", () => {
+            // add click listener to boxes
             let boxes = document.getElementsByClassName("portfolio-box");
     
             for (const box of boxes) {
@@ -111,6 +112,17 @@
                     });
                     currentActiveModal.classList.add("modal-active");
                     console.log(currentActiveModal);
+                });
+            }
+
+
+            // add click listener to modal close button
+            let closeButtons = document.getElementsByClassName("modal-close");
+
+            for (const button of closeButtons) {
+                button.addEventListener("click", () => {
+                    // tell active modal to hide
+                    currentActiveModal.classList.remove("modal-active");
                 });
             }
         });
