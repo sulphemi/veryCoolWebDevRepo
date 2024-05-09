@@ -63,7 +63,7 @@ dropdown ul li a:hover {
     color: black;
 }
 
-#hero {
+.hero {
     width: 100vw;
     height: 100vh;
     background-color: aliceblue;
@@ -79,12 +79,12 @@ dropdown ul li a:hover {
     margin: auto;
 }
 
-#hero h1 {
+.hero h1 {
     margin: 0;
     text-align: center;
 }
 
-#hero-content {
+.hero-content {
     
 }
 
