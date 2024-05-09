@@ -98,6 +98,12 @@
                 box.addEventListener("click", function() {
                     // console.log("hi");
                     currentActiveModal = document.getElementById(this.getAttribute("linked-modal"));
+
+                    // load everything in modal
+                    currentActiveModal.querySelectorAll(".lazyload").forEach(function (element) {
+                        element.setAttribute("src", element.getAttribute("lazy-src"));
+                        element.removeAttribute("lazy-src");
+                    });
                     console.log(currentActiveModal);
                 });
             }
@@ -188,9 +194,9 @@
         <div class="modal-content">
             <span class="close">&times;</span>
             <!-- Lazy Loaded Image -->
-            <img data-src="https://via.placeholder.com/400" alt="Lazy Loaded Image" class="lazyload">
+            <img lazy-src="https://via.placeholder.com/400" alt="Lazy Loaded Image" class="lazyload">
             <!-- Lazy Loaded Iframe -->
-            <iframe data-src="https://www.example.com" class="lazyload" frameborder="0"></iframe>
+            <iframe lazy-src="https://www.example.com" class="lazyload" frameborder="0"></iframe>
         </div>
     </div>
 </body>
