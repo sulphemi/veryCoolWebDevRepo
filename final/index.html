@@ -5,113 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
     <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="hero.css">
+    <link rel="stylesheet" href="navbar.css">
     <style>
         body {
             margin: 0px;
             box-sizing: border-box;
             font-family: Dosis;
-        }
-    </style>
-    <style>
-        /* navbar css */
-        nav {
-    display: flex;
-    justify-content: flex-end;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000; /* idk if this is too much */
-}
-
-nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-}
-
-nav ul li {
-    margin-left: 10px;
-    display: inline-block;
-    position: relative;
-}
-
-nav ul li a {
-    color: black;
-    display: block;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-}
-
-nav ul li::before {
-    position: absolute;
-    z-index: -1;
-    content: "";
-    width: 0%;
-    height: 1.1rem;
-    background: #c0879e;
-    top: 1.3rem;
-    left: 50%;
-    transition: all 0.5s ease;
-}
-
-nav ul li:hover::before {
-    left: 0;
-    width: 100%;
-}
-
-    </style>
-    <style>
-        /* dropdown css */
-        dropdown {
-            display: inline-block;
-            padding: 10px;
-            background-color: rgb(102, 128, 150);
-            color: white;
-            border-radius: 10px;
-
-            max-height: 30px;
-            overflow: hidden;
-
-            transition: all 1s ease;
-        }
-
-        dropdown:hover {
-            max-height: 200px;
-        }
-
-        dropdown:hover ul {
-            opacity: 100%;
-        }
-
-        dropdown ul {
-            color:black;
-            opacity: 0%;
-            transition: opacity 1s ease;
-        }
-
-        #hero {
-            width: 100vw;
-            height: 100vh;
-            background-color: aliceblue;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        #im {
-            display: flex;
-            align-items: flex-start;
-        }
-
-        #hero h1 {
-            margin: 0;
-            text-align: center;
-        }
-
-        #hero-content {
-            
         }
     </style>
 </head>
@@ -128,13 +28,15 @@ nav ul li:hover::before {
             <h1>Hi, I'm Jing.</h1>
             <div id="im">
                 <h2>I'm a</h2>
-                <dropdown>
-                    something
-                    <ul>
-                        <li>thing 1</li>
-                        <li>thing 2</li>
-                    </ul>
-                </dropdown>
+                <div id="dropdown-wrapper">
+                    <dropdown>
+                        something
+                        <ul>
+                            <li>thing 1</li>
+                            <li>thing 2</li>
+                        </ul>
+                    </dropdown>
+                </div>
             </div>
         </div>
     </div>

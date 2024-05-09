@@ -1,0 +1,51 @@
+/* dropdown css */
+dropdown {
+    display: inline-block;
+    padding: 10px;
+    margin-left: 10px;
+    background-color: rgb(102, 128, 150);
+    color: white;
+    border-radius: 10px;
+
+    max-height: 30px;
+    overflow: hidden;
+
+    transition: all 1s ease;
+}
+
+dropdown:hover {
+    max-height: 200px;
+}
+
+dropdown:hover ul {
+    opacity: 100%;
+}
+
+dropdown ul {
+    color:black;
+    opacity: 0%;
+    transition: opacity 1s ease;
+}
+
+#hero {
+    width: 100vw;
+    height: 100vh;
+    background-color: aliceblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#im {
+    display: flex;
+    align-items: flex-start;
+}
+
+#hero h1 {
+    margin: 0;
+    text-align: center;
+}
+
+#hero-content {
+    
+}
