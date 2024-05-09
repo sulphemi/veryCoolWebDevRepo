@@ -97,7 +97,7 @@
 
         document.addEventListener("DOMContentLoaded", () => {
             // add click listener to boxes
-            let boxes = document.getElementsByClassName("portfolio-box");
+            const boxes = document.getElementsByClassName("portfolio-box");
     
             for (const box of boxes) {
                 box.addEventListener("click", function() {
@@ -118,7 +118,7 @@
 
 
             // add click listener to modal close button
-            let closeButtons = document.getElementsByClassName("modal-close");
+            const closeButtons = document.getElementsByClassName("modal-close");
 
             for (const button of closeButtons) {
                 button.addEventListener("click", () => {
