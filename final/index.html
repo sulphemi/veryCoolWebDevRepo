@@ -19,22 +19,33 @@
     <style>
         .portfolio-content {
             display: flex;
+            flex-direction: row;
             justify-content: center;
         }
 
+        .portfolio-column:nth-child(odd) {
+            margin-top: 30px;
+        }
+
         .portfolio-box {
-            width: 300px;
-            height: 300px;
+            margin: 10px;
+            width: 200px;
+            height: 200px;
             background-color: white;
             border-radius: 10px;
+            transition: all 0.2s ease;
+        }
+
+        .portfolio-box:hover {
+            background-color: lightgray;
         }
 
         /* faux drop shadow for box */
         .portfolio-box::before {
             content: "";
             position: absolute;
-            width: 300px;
-            height: 300px;
+            width: 200px;
+            height: 200px;
             background-color: rgb(206, 221, 221);
             border-radius: 10px;
             transform: translate(5px, 5px);
@@ -74,8 +85,49 @@
     </div>
       
     <div class="portfolio-content">
-        <div class="portfolio-box">
-            <p>hi</p>
+        <div class="portfolio-column">
+            <div class="portfolio-box">
+                <p>hi</p>
+            </div>
+            <div class="portfolio-box">
+                <p>hi</p>
+            </div>
+            <div class="portfolio-box">
+                <p>hi</p>
+            </div>
+            <div class="portfolio-box">
+                <p>hi</p>
+            </div>
+        </div>
+
+        <div class="portfolio-column">
+            <div class="portfolio-box">
+                <p>hi</p>
+            </div>
+            <div class="portfolio-box">
+                <p>hi</p>
+            </div>
+            <div class="portfolio-box">
+                <p>hi</p>
+            </div>
+            <div class="portfolio-box">
+                <p>hi</p>
+            </div>
+        </div>
+
+        <div class="portfolio-column">
+            <div class="portfolio-box">
+                <p>hi</p>
+            </div>
+            <div class="portfolio-box">
+                <p>hi</p>
+            </div>
+            <div class="portfolio-box">
+                <p>hi</p>
+            </div>
+            <div class="portfolio-box">
+                <p>hi</p>
+            </div>
         </div>
     </div>
 </body>
