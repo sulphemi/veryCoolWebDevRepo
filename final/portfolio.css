@@ -1,0 +1,45 @@
+.portfolio-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    /* min-height: 100vh; */
+
+    /* height: 0vh; */
+    height: 100vh;
+    overflow: scroll;
+    transition: all 1s ease;
+
+    visibility: hidden;
+}
+
+.portfolio-content:target {
+    visibility: visible;
+    /* height: 100vh; */
+}
+
+.portfolio-content .portfolio-column:nth-child(odd) {
+    margin-top: 30px;
+}
+
+.portfolio-box {
+    margin: 10px;
+    width: 200px;
+    height: 200px;
+    background-color: white;
+    box-shadow: 5px 5px rgb(206, 221, 221);
+    border-radius: 10px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.5s linear;
+}
+
+.portfolio-box:hover {
+    background-color: rgb(226, 241, 241);
+    transform: translate(-10px, -10px);
+    box-shadow: 10px 10px rgb(206, 221, 221);
+}
+
+@media screen and (max-width: 800px) {
+    /* styles go here idk lolz */
+    .portfolio-content {
+        flex-direction: column;
+    }
+}
