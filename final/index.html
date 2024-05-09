@@ -13,6 +13,9 @@
             box-sizing: border-box;
             font-family: Dosis;
             background-color: gray;
+            scroll-behavior: smooth;
+
+            overflow: hidden;
         }
     </style>
 
@@ -21,9 +24,19 @@
             display: flex;
             flex-direction: row;
             justify-content: center;
+            /* min-height: 100vh; */
+
+            height: 0vh;
+            overflow: scroll;
+            transition: all 1s ease;
         }
 
-        .portfolio-column:nth-child(odd) {
+        .portfolio-content:target {
+            visibility: visible;
+            height: 100vh;
+        }
+
+        .portfolio-content .portfolio-column:nth-child(odd) {
             margin-top: 30px;
         }
 
@@ -37,7 +50,7 @@
         }
 
         .portfolio-box:hover {
-            background-color: lightgray;
+            background-color: rgb(226, 241, 241);
         }
 
         /* faux drop shadow for box */
@@ -50,6 +63,10 @@
             border-radius: 10px;
             transform: translate(5px, 5px);
             z-index: -1;
+        }
+
+        .portfolio-content:not(target) .portfolio-column .portfolio-box::before {
+            visibility: hidden;
         }
 
         @media screen and (min-width: 800) {
@@ -79,7 +96,7 @@
                             <!-- <p>something</p> -->
                         </div>
                         <ul>
-                            <li><a href="#">thing 1</a></li>
+                            <li><a href="#cs-portfolio">cs</a></li>
                             <li><a href="#">thing 2</a></li>
                         </ul>
                     </dropdown>
@@ -88,7 +105,7 @@
         </div>
     </div>
       
-    <div class="portfolio-content">
+    <div class="portfolio-content" id="cs-portfolio">
         <div class="portfolio-column">
             <div class="portfolio-box">
                 <p>hi</p>
