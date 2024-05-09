@@ -35,7 +35,7 @@ nav ul li::before {
     content: "";
     width: 0%;
     height: 1.1rem;
-    background: #c0879e;
+    background: #878dc0;
     top: 1.3rem;
     left: 50%;
     transition: all 0.5s ease;

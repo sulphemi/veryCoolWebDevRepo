@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>Jing's Portfolio</title>
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="hero.css">
     <link rel="stylesheet" href="navbar.css">
@@ -17,7 +17,7 @@
             margin: 0px;
             box-sizing: border-box;
             font-family: Dosis;
-            background-color: gray;
+            background-color: rgb(172, 186, 198);
             scroll-behavior: smooth;
 
             overflow: hidden;
@@ -29,24 +29,7 @@
         window.addEventListener('resize', function(event) {
             console.log(event);
             let currentElement = document.getElementById(window.location.hash.substring(1));
-            // currentElement.scrollIntoView();
-            const y = currentElement.getBoundingClientRect().top + window.scrollY;
-            // for (let i = 0; i < 20; i++) {
-
-            // }
-
-            // setTimeout(function(){
-            //     window.scroll({
-            //         top: y,
-            //         behavior: 'auto'
-            //     });
-            // }, 500);
-
-            // window.scroll({
-            //     top: y,
-            //     behavior: 'auto'
-            // });
-            console.log('Window resized');
+            currentElement.scrollIntoView();
         });
     </script>
 
@@ -161,11 +144,10 @@
                             <svg width="20" height="20" id="dropdown-arrow">
                                 <polyline points="0,5 10,15 20,5" stroke="white" fill="none" stroke-width="3" />
                             </svg>
-                            <!-- <p>something</p> -->
                         </div>
                         <ul>
-                            <li><a href="#cs-portfolio">cs</a></li>
-                            <li><a href="#">thing 2</a></li>
+                            <li><a href="#cs-portfolio">developer</a></li>
+                            <li><a href="#">(coming soon...)</a></li>
                         </ul>
                     </dropdown>
                 </div>
