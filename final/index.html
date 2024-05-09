@@ -69,6 +69,8 @@
         }
         
         .modal-content {
+            display: flex;
+            position: relative;
             background-color: #ffffff;
             margin: 10% auto;
             padding: 20px;
@@ -79,9 +81,12 @@
         
         /* Close Button Style */
         .modal-close {
+            position: absolute;
+            top: 0px;
+            right: 20px;
             color: #aaa;
             float: right;
-            font-size: 28px;
+            font-size: 30px;
             font-weight: bold;
         }
         
@@ -214,8 +219,7 @@
             <span class="modal-close">&times;</span>
             <!-- Lazy Loaded Image -->
             <img lazy-src="https://via.placeholder.com/400" alt="Lazy Loaded Image" class="lazyload">
-            <!-- Lazy Loaded Iframe -->
-            <iframe lazy-src="https://www.example.com" class="lazyload" frameborder="0"></iframe>
+            <h2>Graphics Engine</h2>
         </div>
     </div>
 </body>
