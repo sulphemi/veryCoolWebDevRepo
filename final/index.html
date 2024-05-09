@@ -109,6 +109,7 @@
                     currentActiveModal.querySelectorAll(".lazyload").forEach(function (element) {
                         element.setAttribute("src", element.getAttribute("lazy-src"));
                         element.removeAttribute("lazy-src");
+                        element.classList.remove("lazyload");
                     });
                     currentActiveModal.classList.add("modal-active");
                     console.log(currentActiveModal);
