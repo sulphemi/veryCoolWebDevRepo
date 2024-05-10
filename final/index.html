@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jing's Portfolio</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="hero.css">
+    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="portfolio.css">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0px;
+            box-sizing: border-box;
+            font-family: Dosis;
+            background-color: rgb(172, 186, 198);
+            scroll-behavior: smooth;
+
+            overflow: hidden;
+        }
+    </style>
+
+    <script>
+        // when window is resized, scroll to targeted element
+        window.addEventListener('resize', function(event) {
+            console.log(event);
+            let currentElement = document.getElementById(window.location.hash.substring(1));
+            currentElement.scrollIntoView();
+        });
+    </script>
+
+    <style>
+        /* modals */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        
+        .modal-active {
+            display: block;
+        }
+        
+        .modal-content {
+            display: flex;
+            position: relative;
+            background-color: #ffffff;
+            margin: 10% auto;
+            padding: 20px;
+            /* border: 1px solid #888; */
+            border-radius: 20px;
+            width: 80%;
+        }
+        
+        /* Close Button Style */
+        .modal-close {
+            position: absolute;
+            top: 0px;
+            right: 20px;
+            color: #aaa;
+            float: right;
+            font-size: 30px;
+            font-weight: bold;
+        }
+        
+        .modal-close:hover {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .modal-caption {
+            margin: 20px;
+        }
+
+        .modal-caption * {
+            margin-top: 0;
+        }
+    </style>
+
+    <script>
+        let currentActiveModal = null;
+
+        document.addEventListener("DOMContentLoaded", () => {
+            // add click listener to boxes
+            const boxes = document.getElementsByClassName("portfolio-box");
+    
+            for (const box of boxes) {
+                box.addEventListener("click", function() {
+                    // console.log("hi");
+                    currentActiveModal = document.getElementById(this.getAttribute("linked-modal"));
+                    if (! currentActiveModal) return;
+
+                    // load everything in modal
+                    currentActiveModal.querySelectorAll(".lazyload").forEach(function (element) {
+                        element.setAttribute("src", element.getAttribute("lazy-src"));
+                        element.removeAttribute("lazy-src");
+                        element.classList.remove("lazyload");
+                    });
+                    currentActiveModal.classList.add("modal-active");
+                    console.log(currentActiveModal);
+                });
+            }
+
+
+            // add click listener to modal close button
+            const closeButtons = document.getElementsByClassName("modal-close");
+
+            for (const button of closeButtons) {
+                button.addEventListener("click", () => {
+                    // tell active modal to hide
+                    currentActiveModal.classList.remove("modal-active");
+                });
+            }
+        });
+    </script>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#">Portfolio</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+    <div class="hero">
+        <div class="hero-content">
+            <h1>Hi, I'm Jing.</h1>
+            <div id="im">
+                <h2>I'm a</h2>
+                <div id="dropdown-wrapper">
+                    <dropdown>
+                        <div>
+                            <svg width="20" height="20" id="dropdown-arrow">
+                                <polyline points="0,5 10,15 20,5" stroke="white" fill="none" stroke-width="3" />
+                            </svg>
+                        </div>
+                        <ul>
+                            <li><a href="#cs-portfolio">developer</a></li>
+                            <li><a href="#">(coming soon...)</a></li>
+                        </ul>
+                    </dropdown>
+                </div>
+            </div>
+        </div>
+    </div>
+      
+    <div class="portfolio-content" id="cs-portfolio">
+        <div class="portfolio-column">
+            <div class="portfolio-box" linked-modal="project-GraphicsEngine-modal">
+                <img src="./thumb/201.png">
+            </div>
+            <div class="portfolio-box">
+                <p>hi</p>
+            </div>
+            <div class="portfolio-box">
+                <p>hi</p>
+            </div>
+            <div class="portfolio-box">
+                <p>hi</p>
+            </div>
+        </div>
+
+        <div class="portfolio-column">
+            <div class="portfolio-box" linked-modal="project-CCMidterm-modal">
+                <img src="./thumb/ccmidterm.jpg">
+            </div>
+            <div class="portfolio-box">
+                <p>hi</p>
+            </div>
+            <div class="portfolio-box">
+                <p>hi</p>
+            </div>
+            <div class="portfolio-box">
+                <p>hi</p>
+            </div>
+        </div>
+
+        <div class="portfolio-column">
+            <div class="portfolio-box" linked-modal="project-CCFinal-modal">
+                <img src="./thumb/ccfinal.jpg">
+            </div>
+            <div class="portfolio-box">
+                <p>hi</p>
+            </div>
+            <div class="portfolio-box">
+                <p>hi</p>
+            </div>
+            <div class="portfolio-box">
+                <p>hi</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- modals -->
+    <div id="project-GraphicsEngine-modal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <img lazy-src="./full/graphics.gif" class="lazyload">
+            <div class="modal-caption">
+                <h2>Graphics Engine</h2>
+                <p>A matrix-based graphics engine written in Java.</p>
+                <p>Links: <a href="https://github.com/sulphemi/graphics-engine">Github</a></p>
+            </div>
+        </div>
+    </div>
+
+    <div id="project-CCMidterm-modal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <iframe lazy-src="https://openprocessing.org/sketch/2081769/embed/" width="600" height="600" class="lazyload"></iframe>
+            <div class="modal-caption">
+                <h2>Isolation</h2>
+                <p>Midterm for Creative Coding</p>
+                <!-- <p>Links: <a href="https://github.com/sulphemi/graphics-engine">Github</a></p> -->
+            </div>
+        </div>
+    </div>
+
+    <div id="project-CCFinal-modal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <iframe lazy-src="https://openprocessing.org/sketch/2130812/embed/" width="600" height="600" class="lazyload"></iframe>
+            <div class="modal-caption">
+                <h2>Computers??</h2>
+                <p>Final for Creative Coding</p>
+                <!-- <p>Links: <a href="https://github.com/sulphemi/graphics-engine">Github</a></p> -->
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,94 @@
+/* dropdown css */
+dropdown {
+    display: inline-block;
+    /* padding: 10px; */
+    margin-left: 10px;
+    background-color: rgb(102, 128, 150);
+    /* color: white; */
+    border-radius: 10px;
+
+    width: fit-content;
+    max-height: 40px;
+    overflow: hidden;
+
+    transition: all 1s ease;
+}
+
+dropdown:hover {
+    max-height: 200px;
+}
+
+dropdown:hover ul {
+    opacity: 100%;
+}
+
+dropdown ul {
+    color:black;
+    margin: 0;
+    padding: 0;
+    opacity: 0%;
+    transition: opacity 1s ease;
+}
+
+dropdown div {
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+}
+
+dropdown div #dropdown-arrow {
+    position: relative;
+    transition: all 1s ease;
+}
+
+dropdown:hover div #dropdown-arrow {
+    transform: rotate(180deg);
+}
+
+dropdown ul li {
+    list-style: none;
+    text-align: center;
+}
+
+dropdown ul li a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: white;
+    transition: all 0.5s ease;
+}
+
+dropdown ul li a:hover {
+    background-color: aliceblue;
+    color: black;
+}
+
+.hero {
+    width: 100vw;
+    height: 100vh;
+    background-color: aliceblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#im {
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    margin: auto;
+}
+
+.hero h1 {
+    margin: 0;
+    text-align: center;
+}
+
+.hero-content {
+    
+}
+
+#dropdown-wrapper {
+    overflow: visible;
+    height: 40px;
+}
