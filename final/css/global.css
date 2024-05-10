@@ -1,0 +1,13 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: Dosis;
+    background-color: rgb(172, 186, 198);
+    scroll-behavior: smooth;
+
+    overflow: hidden;
+}
