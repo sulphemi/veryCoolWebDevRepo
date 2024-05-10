@@ -79,7 +79,7 @@ dropdown ul li a:hover {
     margin: auto;
 }
 
-.hero h1 {
+.hero h1, .hero p {
     margin: 0;
     text-align: center;
 }
@@ -91,4 +91,13 @@ dropdown ul li a:hover {
 #dropdown-wrapper {
     overflow: visible;
     height: 40px;
+}
+
+#about, #contact {
+    display: none;
+    transition-delay: 1s;
+}
+
+#about:target, #contact:target {
+    display: flex;
 }
